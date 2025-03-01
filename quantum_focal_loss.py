@@ -27,7 +27,7 @@ def superposed_focal_loss(params, y_true1, y_true2, alpha=0.25, gamma=2.0):
     loss1 = -alpha * (1 - y_pred1) ** gamma * y_true1 * torch.log(y_pred1 + 1e-8)
     loss2 = -alpha * (1 - y_pred2) ** gamma * y_true2 * torch.log(y_pred2 + 1e-8)
 
-    return loss1 + loss2  # İki zor sınıfın focal loss'larını topluyoruz
+    return loss1 + loss2
 
 
 params = torch.tensor(np.random.rand(2), dtype=torch.float32, requires_grad=True)

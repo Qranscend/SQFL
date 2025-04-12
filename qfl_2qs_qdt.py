@@ -61,3 +61,4 @@ for epoch in range(50):
     if epoch % 10 == 0:
         pred_class = quantum_classifier(params)
         print(f"Epoch {epoch}: Loss = {loss.item()}, Predicted Class = {pred_class}")
+        

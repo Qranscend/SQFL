@@ -50,16 +50,14 @@ def superposed_focal_loss(params, y_true, alpha=0.25, gamma=2.0):
 
     return losses  
 
-# Parametreler
 params = torch.tensor(np.random.rand(5 * n_qubits), dtype=torch.float32, requires_grad=True)  
 
-# Optimizer
 optimizer = torch.optim.Adam([params], lr=0.1)
 
-# Eğitim döngüsü
+
 for epoch in range(50):
     optimizer.zero_grad()
-    y_true = [1] * n_qubits  # Tüm etiketler 1 kabul edildi
+    y_true = [1] * n_qubits 
     loss = superposed_focal_loss(params, y_true)
     loss.backward()
     optimizer.step()
